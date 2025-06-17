@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Pilih Layanan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Pilih Jenis Layanan</h2>
+<div class="card-container">
+  <div class="card" onclick="pilih('motor')">
+    <img src="https://cdn-icons-png.flaticon.com/128/5811/5811823.png" />
+    <div class="card-title">Ojeka</div>
+    <div class="card-desc">Layanan antar jemput cepat dengan motor.</div>
+  </div>
+  <div class="card" onclick="pilih('mobil')">
+    <img src="https://cdn-icons-png.flaticon.com/128/12689/12689302.png" />
+    <div class="card-title">Oto Run</div>
+    <div class="card-desc">Transportasi nyaman dan aman dengan mobil.</div>
+  </div>
+  <div class="card" onclick="pilih('kurir')">
+    <img src="https://cdn-icons-png.flaticon.com/128/9561/9561688.png" />
+    <div class="card-title">KurGo</div>
+    <div class="card-desc">Kirim barang cepat dan terpercaya.</div>
+  </div>
+  <div class="card" onclick="pilih('bentor')">
+    <img src="https://cdn-icons-png.flaticon.com/128/7890/7890227.png" />
+    <div class="card-title">B-Ride</div>
+    <div class="card-desc">Transportasi khas lokal dengan bentor.</div>
+  </div>
+  <div class="card" onclick="pilih('pickup')">
+    <img src="https://cdn-icons-png.flaticon.com/128/9017/9017605.png" />
+    <div class="card-title">Pickup</div>
+    <div class="card-desc">Angkut barang besar atau pindahan.</div>
+  </div>
+  <div class="card" onclick="pilih('pickup_scooter')">
+    <img src="https://cdn-icons-png.flaticon.com/128/1791/1791556.png" />
+    <div class="card-title">Scooter Belanja</div>
+    <div class="card-desc">Driver belanja dan talangin, bayar di tempat.</div>
+  </div>
+</div>
+
+<script>
+  function pilih(vehicle) {
+    // Kirim pilihan ke Kodular
+    if (window.AppInventor) {
+      window.AppInventor.setWebViewString(vehicle);
+    } else {
+      alert("Kamu memilih: " + vehicle);
+    }
+  }
+</script>
+
+</body>
+</html>
